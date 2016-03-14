@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+  <p>Who is my favourite person?</p>
+  <form action="cast" method="post">
+    <ul class="unstyled">
+      <% Choices.each do |id, text| %>
+        <li>
+          <label class="checkbox">
+            <input type="checkbox" name="votes[<%= id %>]" value="<%=id %>" id="vote_<%= id %>" />
+            <%= text %>
+          </label>
+        </li>
+      <% end %>
+    </ul>
+  <button type="submit" class="btn btn-primary">Reveal all!</button>
+  </form>
+</html>
